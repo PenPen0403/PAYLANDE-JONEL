@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
+import { Api } from '../api.model';
+import { SampleService } from '../sample.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +10,31 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  apis: Api[]= [];
+  usernme: any;
+  id: any;
+  data: any;
 
-  constructor() {}
+  constructor(private logout: LoginService,
+              private router: Router,
+              private sample: SampleService) {
+            this.usernme= localStorage.getItem('name');
+              }
+   ngOnInit():void{
+    this.fetchData();
+    
+  }
+  loggedOut(){
+    this.logout.login = false;
+    localStorage.removeItem('any');
+    this.router.navigate(['login']);
+  }
+
+  async fetchData(){
+    await this.sample.getApi().subscribe((response)=>{
+      this.data = response.result;
+      this.data =this.data.slice(0,4);
+    })
+  }
 
 }

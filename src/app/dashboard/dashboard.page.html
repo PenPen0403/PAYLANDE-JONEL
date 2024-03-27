@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Dashboard</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home">
+          <ion-label>Home</ion-label>
+        </ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="heart">
+        <ion-icon name="calculator">
+          <ion-label>Calculator</ion-label>
+        </ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="toggleModal()">
+        <ion-icon name="person">
+          <ion-label>Component</ion-label>
+        </ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+</ion-content>
