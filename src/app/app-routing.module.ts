@@ -7,7 +7,6 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule),
     canActivate:[AuthenticationService]
-    // loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -16,12 +15,18 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule),
+    canActivate:[AuthenticationService]
   },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'calculator',
+    loadChildren: () => import('./calculator/calculator.module').then( m => m.CalculatorPageModule)
+  },
+
 ];
 
 @NgModule({

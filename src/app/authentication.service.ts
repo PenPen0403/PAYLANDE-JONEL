@@ -7,8 +7,13 @@ export class AuthenticationService {
   authenticated: boolean = false;
   constructor() { }
 
-  canActivate(){
-    return this.authenticated;
+  canActivate(){  
+    if(localStorage.getItem('logged') === 'true'){
+      return this.authenticated=true;
+    } else{
+      return this.authenticated;
+    }
+    
   }
 
 }

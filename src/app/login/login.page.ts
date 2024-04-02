@@ -28,6 +28,7 @@ export class LoginPage implements OnInit {
     for (let i=0; i< this.usernameArray.length; i++){
       if((this.username === this.usernameArray[i]) && (this.password === this.passwordArray[i])){
         this.loginServ.login = true
+        localStorage.setItem('logged', 'true');
       }
     }
     if (this.loginServ.login){
