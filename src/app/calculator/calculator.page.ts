@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-calculator',
@@ -6,18 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator.page.scss'],
 })
 export class CalculatorPage implements OnInit {
- input: string= '';
- history: string = '';
- fNumber: number = 0;
- sNumber: number= 0;
- equalsTo: boolean = false;
- strr: string = '';
- click: boolean = true;
- unclick: boolean=false;
+username: string | null= '';
 
-  constructor() { }
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
+    this.auth.authenticated=false;
+    this.username=localStorage.getItem('name');
   }
 
   

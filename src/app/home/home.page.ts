@@ -26,7 +26,7 @@ export class HomePage {
   }
   loggedOut(){
     this.logout.login = false;
-    localStorage.removeItem('any');
+    localStorage.removeItem('logged');
     this.router.navigate(['login']);
   }
 
