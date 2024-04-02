@@ -17,7 +17,8 @@ export class DashboardPage implements OnInit {
   
   constructor(private modalCtrl: ModalController,
               private sample: SampleService,
-              private auth: AuthenticationService) {
+              private auth: AuthenticationService,
+              private router: Router) {
                 
                 
               }
@@ -32,6 +33,11 @@ export class DashboardPage implements OnInit {
     })
     return await modal.present();
   };
+
+  goToCalculator(){
+    this.router.navigate(['calculator']);
+    this.auth.authenticated=true;
+  }
 
 
 

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { Api } from '../api.model';
 import { SampleService } from '../sample.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomePage {
   data: any;
 
   constructor(private logout: LoginService,
+              private auth: AuthenticationService,
               private router: Router,
               private sample: SampleService) {
             this.usernme= localStorage.getItem('name');
@@ -26,7 +28,7 @@ export class HomePage {
   }
   loggedOut(){
     this.logout.login = false;
-    localStorage.removeItem('any');
+    localStorage.removeItem('logged');
     this.router.navigate(['login']);
   }
 

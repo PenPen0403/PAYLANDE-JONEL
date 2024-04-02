@@ -7,63 +7,84 @@
 </ion-header>
 
 <ion-content>
+  <div>
+    <ion-item>
+      <ion-text color="danger">
+        {{input}}
+      </ion-text>
+    </ion-item>
+    
+  </div>
+  
+  <div>
+    <ion-item>
+      <ion-list *ngIf="showHistory && history">
+        <ion-label>History</ion-label>
+        <ion-item >
+      {{history.input}} = {{history.calculated}}
+        </ion-item>
+      </ion-list>
+        </ion-item>
+  </div>
+  
+
   <ion-grid>
     <ion-row>
-      <ion-col>
-        <ion-button>7</ion-button>
+      <ion-col size="3">
+        <ion-button expand="full" color="primary" (click)="addNum('7')" >7</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>8</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('8')">8</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>9</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('9')">9</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>/</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('/')">/</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-button>4</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('4')">4</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>5</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('5')">5</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>6</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('6')">6</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>*</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-button>1</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button>2</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button>3</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button>-</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('*')">*</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-button>C</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('1')">1</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>0</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('2')">2</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>=</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('3')">3</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>+</ion-button>
+        <ion-button  expand="full" color="primary" (click)="addNum('-')">-</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button  expand="full" color="primary" (click)="clearInput()" >C</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  expand="full" color="primary" (click)="addNum('0')">0</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  expand="full" color="primary" (click)="calculate()">=</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  expand="full" color="primary" (click)="addNum('+')">+</ion-button>
       </ion-col>
     </ion-row>
     </ion-grid>
