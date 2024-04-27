@@ -1,0 +1,7 @@
+{
+  "name": "ACTIVITY_9_P",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
