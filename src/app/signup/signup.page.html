@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <!-- <ion-title>Sign Up</ion-title>
+  <form action="">
+    <div>
+      <ion-item>
+        <ion-input [(ngModel)]="email" type="email" fill="outline" placeholder="Email"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-input [(ngModel)]="password" type="password" fill="outline" placeholder="Password"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item><br>
+      <p>Confirm Password</p>
+      <ion-item>
+        <ion-input [(ngModel)]="confirmPass" type="password" fill="outline" placeholder="Password"></ion-input>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </ion-item> <br>
+
+      <div>
+        <ion-button (click)="signUp()">Sign Up</ion-button> <br>
+        <p>Already have an Account? <a [routerLink]="['/signin']"> Login </a></p>
+        
+      </div>
+    </div>
+  </form> -->
+
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="login"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Sign Up</ion-title>
+    </ion-toolbar>
+      
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    
+    <h1 size="large" style="padding-left:20px">Register Now</h1>
+
+    <div style="padding-left:30px; padding-right: 30px;">
+    <ion-card style="font-size: 15px;">
+    <ion-input style="padding-left:20px" label="Email Address" [(ngModel)]="email" type="text" label-placement="floating" fill="solid"></ion-input>
+    </ion-card>
+    <ion-card style="font-size: 15px;">
+      <ion-input style="padding-left:20px" label="Password" [(ngModel)]="password" type="password" label-placement="floating" fill="solid"></ion-input>
+      </ion-card>
+      <h6>Confirm password</h6>
+    <ion-card style="font-size: 15px;">
+      <ion-input style="padding-left:20px" label="Confirm Password" [(ngModel)]="confirmPass" type="password" label-placement="floating" fill="solid"></ion-input>
+    </ion-card>
+    </div>
+    
+    <ion-button style="padding-left:30px; padding-right: 30px;"  expand="block" (click)="signingUp()">SIGN UP</ion-button>
+  
+    <p style="text-align: center;">Already have an account? <a style="color: rgb(0, 47, 255);" href="login">Login</a></p>
+  </ion-content>
+</ion-content>
