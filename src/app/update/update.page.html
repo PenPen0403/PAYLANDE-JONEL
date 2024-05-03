@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Manhwa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="card-container">
+    <ion-card-content>
+      <div class="input-data">
+        <ion-item>
+          <ion-label position="floating">Manhwa Name</ion-label>
+          <ion-input type="text" [(ngModel)]="users.manhwaName" required></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="floating">Author</ion-label>
+          <ion-input type="text" [(ngModel)]="users.author" required></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="floating">Chapters</ion-label>
+          <ion-input type="number" [(ngModel)]="users.chapter" required></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Release Date</ion-label>
+          <input type="date" [(ngModel)]="users.releaseDate">
+        </ion-item>
+    
+        <ion-item>
+          <ion-select label="Adult Content?" interface="popover" placeholder="Select" [(ngModel)]="users.adultContent">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-select label="Status" placeholder="Select" [(ngModel)]="users.status" interface="popover">
+            <ion-select-option value="Ongoing">Ongoing</ion-select-option>
+            <ion-select-option value="Completed">Completed</ion-select-option>
+            <ion-select-option value="On Hiatus">On Hiatus</ion-select-option>
+            <ion-select-option value="Dropped">Dropped</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div class="addBtn">
+        <ion-button (click)="updateManhwa()" expand="block">Update</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

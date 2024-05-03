@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
       this.authen.setAuthentication(true);
       this.authen.presentAlert('Success','Logged In Successfully!');
       this.authen.authenticated = true;
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['home']);
     })
     .catch((error) => {
       const errorcode = error.code;

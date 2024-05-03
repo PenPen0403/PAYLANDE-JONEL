@@ -6,30 +6,35 @@
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <h1 style="padding-left: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Zyonaud</h1>
-  <p style="padding-left: 20px;">Existing user? Sign in here.</p><br>
 
-  
-    <div style="padding-left:30px; padding-right: 30px;">
-        <ion-card style="font-size: 15px;" >
-          <ion-input style="padding-left:20px" label="Email" [(ngModel)]="email" type="text" label-placement="floating" fill="solid"></ion-input>
-        </ion-card>
+<ion-content class="ion-padding">
+  <ion-card class="login-card">
 
-        <ion-card style="font-size: 15px;">
-        <ion-input style="padding-left:50px" label="Password" [(ngModel)]="password" type="password" label-placement="floating" fill="solid"></ion-input>
-      </ion-card>
+    <div class="ion-padding">
+      <h1>Zyonaud</h1>
+      <p>Existing user? Sign in here.</p><br>
+
+      <div>
+        
+          <ion-card-content>
+            <ion-input label="Email" [(ngModel)]="email" type="text" label-placement="floating" fill="solid"></ion-input>
+          </ion-card-content>
+        
+        
+          <ion-card-content>
+            <ion-input label="Password" [(ngModel)]="password" type="password" label-placement="floating" fill="solid"></ion-input>
+          </ion-card-content>
+       
+      </div>
+
+      <ion-grid>
+        <ion-button expand="block" (click)="logIn()">
+          <strong>Log in</strong>
+        </ion-button>
+        <p style="text-align: center;"> Or new user?
+          <a [routerLink]="['/signup']">Create an account</a>
+        </p>
+      </ion-grid>
     </div>
-
-    
-
-
-    <ion-grid>
-      <ion-button expand="block" (click)="logIn()" style="padding-left:30px; padding-right:30px">
-        <strong>Log in</strong>
-      </ion-button>
-      <p style="text-align: center;"> Or new user?
-        <a [routerLink]="['/signup']">Create an account</a>
-      </p>
-    </ion-grid>
+  </ion-card>
 </ion-content>

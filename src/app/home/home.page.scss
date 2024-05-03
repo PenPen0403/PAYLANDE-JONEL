@@ -1,27 +1,29 @@
 #container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-card {
+  margin-bottom: 20px; /* Add margin between each card */
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-card-content {
+  padding: 10px; /* Add padding to the card content */
 }
 
-#container a {
-  text-decoration: none;
+ion-item {
+  --padding-start: 0; /* Remove default padding from ion-item */
+}
+
+/* Adjust ion-row alignment for buttons */
+ion-row {
+  align-items: center;
+}
+
+/* Optional: Add custom styling for ion-buttons */
+ion-button {
+  --border-radius: 8px; /* Example: Set border-radius for buttons */
 }

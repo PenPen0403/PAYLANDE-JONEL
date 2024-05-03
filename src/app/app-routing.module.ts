@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthService } from './auth.service';
 
+
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthService],
   },
   {
     path: '',
@@ -23,6 +25,16 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule),
+    canActivate: [AuthService],
+  },
+  {
+    path: 'update/:id',
+    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule),
+    canActivate: [AuthService],
+  },
+  {
+    path: 'add-manhwa',
+    loadChildren: () => import('./add-manhwa/add-manhwa.module').then( m => m.AddManhwaPageModule),
     canActivate: [AuthService],
   },
 ];
